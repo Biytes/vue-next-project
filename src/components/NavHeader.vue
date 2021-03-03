@@ -32,13 +32,21 @@ export default {
             path: '/'
         },
         {
-            title: 'About',
-            path: '/about'
+            title: 'watch',
+            path: '/watch'
         },
         {
-            title: 'Test',
-            path: '/test'
+            title: 'computed',
+            path: '/computed'
         },
+        {
+            title: 'lifeCycle',
+            path: '/lifeCycle'
+        },
+        // {
+        //     title: 'Test',
+        //     path: '/test'
+        // },
         {
             title: 'UseExample',
             path: '/use-example'

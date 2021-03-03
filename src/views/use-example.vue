@@ -8,31 +8,34 @@
 -->
 <template>
 	<div class="use-example">
-        <section class="mousemove"> x：{{ x }} y： {{ y }}</section>
+    <section class="mousemove"> x：{{ x }} y： {{ y }}</section>
 
-        <section class="timer">tiemr: {{ time }}</section>
+    <section class="timer">tiemr: {{ time }}</section>
 	</div>
 </template>
 
 <script>
-import { ref, watch, computed, getCurrentInstance } from 'vue'
+import { ref, watch, computed, getCurrentInstance, reactive, toRefs } from 'vue'
 import useTime from '@/use/useTime'
 import useMouse from '@/use/useMouse'
 
 export default {
 	setup(props, context) {
 
-        const { x, y } = useMouse()
+    const { x, y } = useMouse()
 
-        const { time } = useTime('YYYY-MM-DD HH:mm:ss')
+    const { time } = useTime('YYYY-MM-DD HH:mm:ss')
 
-        console.log()
 		return {
-            x,
-            y,
-            time
+      x,
+      y,
+      time
 		}
-	}
+	},
+
+  mounted() {
+    console.log(123)
+  }
 }
 </script>
 

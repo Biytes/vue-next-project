@@ -1,19 +1,26 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
-import Home from '../views/Home.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: import(/* webpackChunkName: "about" */ '@/views/home.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/computed',
+    name: 'Computed',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '@/views/computed.vue'),
+  },
+  {
+    path: '/watch',
+    name: 'watch',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '@/views/watch.vue'),
   },
   {
     path: '/test',
@@ -22,6 +29,15 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '@/views/Test.vue'),
+  },
+
+  {
+    path: '/lifeCycle',
+    name: 'LifeCycle',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '@/views/lifeCycle.vue'),
   },
 
   // 用于演示use 拆分业务composition api   
